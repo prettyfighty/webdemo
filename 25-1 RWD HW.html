@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0", "shrink-to-fit=no">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .menu_hbg{
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background-color: #666;
+            height: 50px;
+            width: 50px;
+            border-radius: 20%;
+        }
+        .menu_hbg span{
+            width: 1px;
+            height: 1px;
+            opacity: 1;
+            overflow: hidden;
+            display: block;
+        }
+        .menu_hbg::before{
+            content:'';            
+            height: 2px;
+            width: 46px;
+            background-color: #ccc;
+            position: absolute;
+            left: 2px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 100%;
+            box-shadow: 0px 8px 0px #ccc, 0px -8px 0px #ccc,
+                        0px 16px 0px #ccc, 0px -16px 0px #ccc;
+
+        }
+        #menu_control{
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+        #menu_control:checked ~ .header nav{
+            left: 0;
+        }
+        @media screen and (max-width: 767px){
+            .header{
+            background-color: #aaa;
+            width: 100%;
+            height: 50px;
+            display: block;
+            justify-content: space-between;
+            padding: 5px 0px;
+            position: fixed;
+            opacity: 0.9;
+            }
+            .header img{
+                position: relative;
+                left: 5px;
+            }
+            nav{
+            width: 80%;
+            height: calc(100vh - 50px);
+            background-color: #333;
+            position: absolute;
+            left: -100%;
+            transition: .5s;
+            opacity: .9;
+            }
+            nav a{
+            display: flex;
+            color: #fff;
+            height: 50px;
+            text-decoration: none;
+            background-color: #333;
+            line-height: 50px;
+            border-bottom: 3px double #fff;
+            }
+            nav a:hover{
+                font-size: 20px;
+                color: #ff0;
+                background-color: #333;
+            }
+
+        }
+
+        @media screen and (min-width: 768px){
+            .menu_hbg{
+                display: none;
+            }
+            .header{
+            background-color: #333;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            padding: 10px 0 5px;
+            opacity: .9;
+            }
+            .header img{
+                position: relative;
+                left: 5px;
+            }
+            nav{
+                display: block;
+            }
+            nav a{
+                color: #fff;
+                font-size: 18px;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-left: 3px double #fff;
+            }
+            nav a:hover{
+                font-size: 20px;
+                color: #ff0;
+                background-color: #333;
+            }
+            .wrap{
+                width: 100%;
+                margin: auto;
+            }
+            .group_items{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 1400px;
+                margin: auto;
+                max-width: 1400px;
+            }
+            .item{
+                padding: 10px 10px;
+            }
+            .history .wrap{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .history_pic{
+                width: 50%;
+            }
+            .history_text{
+                width: 50%;
+            }
+        }
+        .blank{
+            height: 50px;
+            background-color: #aaa;
+            padding: 10px 0 5px;
+        }
+        .header img{
+            width: 70px;
+            height: 50px;
+        }
+        .banner img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        img{
+            width: 100%;
+            margin: auto;
+        }
+        h1{
+            text-align: center;
+            padding: 20px 0 10px;
+        }
+        h3{
+            text-align: center;
+        }
+        p{
+            padding:5px 10px 20px;
+        }
+        .history{
+            background-color: #ffc;
+            padding: 20px 0;
+        }
+        .history_text{
+            text-align: center;
+            padding: 20px 40px;
+        }
+        .title{
+            background-color: #ccc;
+            text-align: center;
+            padding: 0 40px 20px;
+        }
+        .footer{
+            background-color: #333;
+            text-align: center;
+            padding: 10px 10px;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="" id="menu_control">
+
+
+    <div class="header">
+        <a href="#" class="logo"><img src="https://fakeimg.pl/70x50/ffa"></a>
+        <nav>
+            <a href="#">首頁</a>
+            <a href="#">關於我們</a>
+            <a href="#">歷史沿革</a>
+            <a href="#">產品介紹</a>
+            <a href="#">聯絡資訊</a>
+            <a href="#">交通方式</a>
+        </nav>
+            <label for="menu_control" class="menu_hbg">
+                <span>選單</span>
+            </label>
+        </div>
+    </div>
+    <div class="blank"></div>
+    <div class="banner"><img src="https://fakeimg.pl/1200x300/fdf"></div>
+
+    <div class="about">
+        <div class="wrap">
+            <div class="title">
+                <h1>關於我們</h1>
+                <p>投入身影困難主人紛紛程度最高本次，分公。</p>
+            </div>
+            <div class="group_items">
+                <div class="item">
+                    <img src="https://fakeimg.pl/300x200/cfc">
+                    <h3>Title</h3>
+                    <p>你們實在推廣應該轉變和平熱點相關內容造型任何各項查找功能，審批安排，精神基層設。</p>
+                </div>
+                <div class="item">
+                    <img src="https://fakeimg.pl/300x200/cfc">
+                    <h3>Title</h3>
+                    <p>你們實在推廣應該轉變和平熱點相關內容造型任何各項查找功能，審批安排，精神基層設。</p>
+                </div>
+                <div class="item">
+                    <img src="https://fakeimg.pl/300x200/cfc">
+                    <h3>Title</h3>
+                    <p>你們實在推廣應該轉變和平熱點相關內容造型任何各項查找功能，審批安排，精神基層設。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="history">
+        <div class="group_items">
+            <div class="history_text">
+                <h1>歷史沿革</h1>
+                <p>報價追求，主義共享交友魔獸給你，做到整。 人氣想要將在另一個陽明山次數強烈左右一聲附近記憶，關西之家，下列擁有堅決介紹經過歡迎光臨電子售價理由整合冠軍各位，評論最好的優惠一起彷彿方案至今填寫，開通創意邀請安裝設計全面探索這裡玩家，瀏覽次數新。</p>
+            </div>
+            <div class="history_pic"><img src="https://fakeimg.pl/300x200/fcc"></div>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="wrap">
+            <div class="title">
+                <h1>產品資訊</h1>
+                <p>職責裝修無線笑容篇文章固定傳真晶片案例直播主，吸引損失崇拜無聊魅力堅決，深深報。</p>
+            </div>
+            <div class="group_items">
+                <div class="item">
+                    <img src="https://fakeimg.pl/300x200/ccf">
+                    <h3>Title</h3>
+                    <p>說完看著，地理身份免費最高孤獨，未知自我接下來早就估計，聯想售價，落實女孩轎車。</p>
+                </div>
+                <div class="item">
+                    <img src="https://fakeimg.pl/300x200/ccf">
+                    <h3>Title</h3>
+                    <p>說完看著，地理身份免費最高孤獨，未知自我接下來早就估計，聯想售價，落實女孩轎車。</p>
+                </div>
+                <div class="item">
+                    <img src="https://fakeimg.pl/300x200/ccf">
+                    <h3>Title</h3>
+                    <p>說完看著，地理身份免費最高孤獨，未知自我接下來早就估計，聯想售價，落實女孩轎車。</p>
+                </div>
+                <div class="item">
+                    <img src="https://fakeimg.pl/300x200/ccf">
+                    <h3>Title</h3>
+                    <p>說完看著，地理身份免費最高孤獨，未知自我接下來早就估計，聯想售價，落實女孩轎車。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        &copy; copyright 2021 by Lailai
+    </div>
+
+
+
+
+
+</body>
+</html>

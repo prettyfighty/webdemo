@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0", "shrink-to-fit=no">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #menu_control{
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+        .header{
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            background-color: #ccc;
+            opacity: .9;
+        }
+        .logo{
+            width: 60px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        /* .logo img{
+            vertical-align: top;
+            display: block;
+        } */
+        .menu_btn{
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: #999;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        .menu_btn span{
+            opacity: 1;
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+        }
+        .menu_btn::before{
+            content:'';
+            width: 36px;
+            height: 2px;
+            background-color: #ddd;
+            position: absolute;            
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px #ddd,
+                        0px -8px 0px #ddd;
+        }
+        /* nav{
+            width: 80%;
+            height: calc(100vh - 50px);
+            background-color: #282923;
+            position: absolute;
+            top: 50px;
+            left: -100%;
+            transition: .5s;
+        } */
+        #menu_control:checked ~ .header nav{
+            left: 0;
+        }
+        @media screen and (max-width: 767px){
+            nav{
+                width: 80%;
+                height: calc(100vh - 50px);
+                background-color: #282923;
+                position: absolute;
+                top: 50px;
+                left: -100%;
+                opacity: .95;
+                transition: .5s linear;
+            }
+            nav a{
+                display: block;
+                text-decoration: none;
+                color: #a6e22c;
+                padding: 10px 20px;
+                border-bottom: 1px solid #a6e22c;
+                transition: background-color .5s 0s;
+            }
+           nav a:hover{
+                background-color: #000;
+                font-size: 18px;
+                color: #bdff39;
+            }
+            .logo img{
+                position: relative;
+                top: 5px;
+            }
+
+        }
+        @media screen and (min-width: 768px){
+            .menu_btn{
+                display: none;
+            }
+            .header{
+                display: flex;
+                justify-content: space-between;
+                background-color: #282923;
+                align-items: center;
+
+            }
+            nav{
+                display: flex;
+                position: relative;
+                left: 0;
+                top: 0;
+                width: auto;
+                height: auto;
+                background-color: transparent;
+            }
+            nav a{
+                display: block;
+                text-decoration: none;
+                color: #a6e22c;
+                padding: 10px 20px;
+                transition: background-color 0.5s 0s;
+            }
+            nav a:hover{
+                background-color: #000;
+                color: #bdff39;
+                font-size: 18px;
+
+            }
+            .logo img{
+                vertical-align: bottom;
+            }
+        }
+        .blank{
+            height: 50px;
+            background-color: #fff;
+        }
+        .pic img{
+            vertical-align: middle;
+        }
+        .banner img{
+            vertical-align: bottom;
+        }
+        .banner img{
+            width: 100%;
+        }
+        .item-group{
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+        }
+        .service{
+            background-color: #ffa;
+            padding: 20px 10px 1px;
+        }
+        .title{
+            margin: 0 0px 20px;
+            background-color: #fcc;
+            padding: 30px 10px;
+        }
+        .title h2{
+            text-align: center;
+            font-size: 46px;
+        }
+        .title p{
+            font-size: 22px;
+            text-align: center;
+        }
+        .item{
+            margin: 0px 10px 40px;
+        }
+        .item .text h3{
+            font-size: 24px;
+            text-align: center;
+        }
+        .item .pic img{
+            width: 100%;
+        }
+        /* .item-group{
+            display: flex;
+        } */
+        .footer{
+            background-color: #333;
+            color: #aaa;
+            text-align: center;
+            padding: 10px 0px 10px;
+        }
+        @media screen and (min-width: 768px){
+            .item-group{
+                display: flex;
+            }
+            .service .item{
+                display: flex;
+                margin: 20px 0 40px;
+            }
+            .service .item .pic,
+            .service .item .text{
+                width: 50%;
+                margin: 0;
+            }
+            .service .item .text{
+                display: flex;
+                padding: 0 20px;
+                box-sizing: border-box;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+        <!-- input:c#menu_control -->
+        <input type="checkbox" name="" id="menu_control">
+
+        <div class="header">
+            <h1 class="logo">
+                <a href="#"><img src="https://picsum.photos/60/40/?random=2"></a>
+            </h1>
+            <label for="menu_control" class="menu_btn">
+                <span>選單</span>
+            </label>
+            <nav>
+                <a href="#">link</a>
+                <a href="#">link</a>
+                <a href="#">link</a>
+                <a href="#">link</a>
+                <a href="#">link</a>
+                <a href="#">link</a> 
+            </nav>
+        </div>
+
+<div class="blank"></div>
+<div class="banner">
+    <img src="https://picsum.photos/1400/500/?random=1">
+</div>
+
+
+<div class="about">
+    <div class="wrap">
+        <div class="title">
+            <h2>關於我們</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim temporibus quam labore distinctio veritatis tempore odit at vero aut aliquam.</p>
+        </div>
+        <div class="item-group">
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200/?random=2">
+                </div>
+                <div class="text">
+                    <h3>title</h3>
+                    <p>錯誤普遍打開幾個基金承擔因為，會不會部門那是關鍵字，夫人連接透明再說，谷歌採取超過製造意味着場所會計劇情產權是不是他還。</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200/?random=2">
+                </div>
+               <div class="text">
+                    <h3>title</h3>
+                    <p>錯誤普遍打開幾個基金承擔因為，會不會部門那是關鍵字，夫人連接透明再說，谷歌採取超過製造意味着場所會計劇情產權是不是他還。</p>
+               </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200/?random=2">
+                </div>
+                <div class="text">
+                    <h3>title</h3>
+                    <p>錯誤普遍打開幾個基金承擔因為，會不會部門那是關鍵字，夫人連接透明再說，谷歌採取超過製造意味着場所會計劇情產權是不是他還。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="service">
+    <div class="wrap">
+        <div class="item-group">
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200/?random=3">
+                </div>
+                <div class="text">
+                    <h3>title</h3>
+                    <p>錯誤普遍打開幾個基金承擔因為，會不會部門那是關鍵字，夫人連接透明再說，谷歌採取超過製造意味着場所會計劇情產權是不是他還。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="about">
+    <div class="wrap">
+        <div class="title">
+            <h2>關於我們</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim temporibus quam labore distinctio veritatis tempore odit at vero aut aliquam.</p>
+        </div>
+        <div class="item-group">
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200/?random=4">
+                </div>
+                <div class="text">
+                    <h3>title</h3>
+                    <p>錯誤普遍打開幾個基金承擔因為，會不會部門那是關鍵字，夫人連接透明再說，谷歌採取超過製造意味着場所會計劇情產權是不是他還。</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200/?random=4">
+                </div>
+               <div class="text">
+                    <h3>title</h3>
+                    <p>錯誤普遍打開幾個基金承擔因為，會不會部門那是關鍵字，夫人連接透明再說，谷歌採取超過製造意味着場所會計劇情產權是不是他還。</p>
+               </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200/?random=4">
+                </div>
+                <div class="text">
+                    <h3>title</h3>
+                    <p>錯誤普遍打開幾個基金承擔因為，會不會部門那是關鍵字，夫人連接透明再說，谷歌採取超過製造意味着場所會計劇情產權是不是他還。</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/300/200/?random=4">
+                </div>
+                <div class="text">
+                    <h3>title</h3>
+                    <p>錯誤普遍打開幾個基金承擔因為，會不會部門那是關鍵字，夫人連接透明再說，谷歌採取超過製造意味着場所會計劇情產權是不是他還。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; copyright 2018 by csscoke
+</div>
+
+
+</body>
+</html>

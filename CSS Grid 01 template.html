@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            font-size: 50px;
+            width: 800px;
+            height: 800px;
+            outline: 2px solid #f00;
+            display: grid;
+            grid-template-rows: 200px 200px 200px 200px;
+            grid-template-columns: 200px 200px 200px 200px;
+            grid-template-areas: 
+            "B1 B1 B2 B2"
+            "B1 B1 B2 B2"
+            "B1 B1 B2 B2"
+            "B3 B3 B3 B3";
+        }
+        .AA{
+            grid-area: B1;
+            background-color: #faa;
+        }
+        .BB{
+            grid-area: B2;
+            background-color: #afa;
+        }
+        .CC{
+            grid-area: B3;
+            background-color: #aaf;
+        }
+
+    </style>
+</head>
+<body>
+    
+
+<div class="container">
+    <div class="AA">A</div>
+    <div class="BB">B</div>
+    <div class="CC">C</div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

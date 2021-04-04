@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0", "shrink-to-fit=no">
+    <title>Document</title>
+    <style>
+        *{ 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .amous{
+            width: 100%;
+            height: 300px;
+            /* display: none; */
+        }
+        .amous1{
+            background-color: #faa;
+        }
+        .amous2{
+            background-color: #aaf;
+        }
+        @media screen and (max-width: 768px) {
+            .amous{
+                background-color: #f00;
+                display: block;
+            }
+        }
+        @media screen and (max-width: 1200px) {
+            .amous{
+                background-color: #00f;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+<div class="amous amous1">amous1</div>
+<div class="amous amous2">amous2</div>
+
+
+</body>
+</html>

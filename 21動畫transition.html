@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            /* transition: 屬性 轉換時間 延遲執行的時間 速度; */
+            transition: padding 1s 0s ease, background-color 1s 1s;
+        }
+        .btn:hover{
+            background-color: #f00;
+            color: #ff0;
+            padding: 10px 30px;
+
+        }
+
+        .lailai{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            }
+
+        .lailai:hover{
+            color: #ff0;
+            animation: laip 1s 0s both;
+            /* animation: laib 1s 1s both; */
+
+        }
+
+        @keyframes laip{
+        0%{
+            padding: 10px 20px;
+            background-color: #000;
+            }
+        100%{
+            padding: 10px 30px;
+            background-color: #f00;
+            }
+        }
+
+        /* @keyframes laib{
+        0%{
+            background-color: #000;
+            }
+        100%{
+            background-color: #f00;
+            }
+        } */
+    </style>
+</head>
+<body>
+    
+<a href="#" class="btn">送出</a>
+<a href="#" class="lailai">送出</a>
+
+</body>
+</html>
